@@ -4,7 +4,6 @@
 			$('.btn-group').removeClass('open');
 		};
 	});
-	//需要在列表隐藏时将选择的列放入localStorage，以备下次还原
 	function saveCol(obj){
 		var cols={};
 		$(obj).find(':checkbox').each(function(){
@@ -19,35 +18,36 @@
 		localStorage.setItem('titles',angular.toJson(titles));
 	}
 </script>
-
-<div class="container" style="margin-top:20px">
-	<div class="row" style="margin-bottom: 20px">
-		<h3>NgTable use component</h3>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home">
+        <span>博人撰</span>
+        <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="page-header">
+			  <h1>图片工具合集 <small>小工具大用途</small></h1>
+			</div>
+		</div>
 	</div>
-	<div class="row" style="margin-bottom: 20px">
-        <label class="checkbox-inline">
-        	<input type="checkbox" ng-model="$ctrl.isFiltersEnabled" /> Enable filter row
-        </label>
-        <label class="checkbox-inline">
-          	<input type="checkbox" ng-model="$ctrl.isFiltersVisible" /> Show filter row
-        </label>
-        <button class="btn btn-default pull-right" ng-disabled="!$ctrl.tableParams.hasFilter()" ng-click="$ctrl.tableParams.filter({})">Clear filters</button>
-	</div>
-	<div class="row" style="margin-bottom: 20px">
-     	<form name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
+	<div class="row" style="margin-bottom: 15px">
+     	<form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
 			<div class="input-group">
-				<span class="input-group-btn">
-		        	<button type="button" class="btn btn-default dropdown-toggle" onclick="$(this).parent().toggleClass('open');" aria-haspopup="true" aria-expanded="false">Show Column <span class="caret"></span></button>
+				<span class="input-group-btn hidden-xs">
+		        	<button type="button" class="btn btn-default dropdown-toggle" onclick="$(this).parent().toggleClass('open');" aria-haspopup="true" aria-expanded="false">显示列 <span class="caret"></span></button>
 		        	<ul class="dropdown-menu" onclick="saveCol(this)">
 			        	<li ng-repeat="col in $ctrl.cols">
 							<label class="checkbox-inline"><input type="checkbox" title="{{col.title()}}" ng-model-options="{ getterSetter: true }" ng-model="col.show"/> {{col.title()}}</label>
 						</li>
 		        	</ul>
 		      	</span>
-				<span class="input-group-addon">Except for...
-					<input type="checkbox" name="inverted" ng-model="$ctrl.isInvertedSearch" />
-				</span>
-				<input type="text" class="form-control" placeholder="Search term" name="searchTerm" ng-model="$ctrl.globalSearchTerm" required />
+				<input type="text" class="form-control" placeholder="请输入需要查询的内容" name="searchTerm" ng-model="$ctrl.globalSearchTerm" required />
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="submit" ng-disabled="$ctrl.searchForm.$invalid">
 				    	<span class="glyphicon glyphicon-search"></span>
@@ -57,26 +57,23 @@
 		</form>
 	</div>
 	<div class="row">
-		<script type="text/ng-template" id="componentHeaderCheckbox.html">
-			<input type="checkbox" ng-model="$ctrl.checkboxes.checked" class="select-all" value="" />
-		</script>
-		<table class="table table-condensed table-bordered table-striped table-hover" 
-			ng-table="$ctrl.tableParams" ng-table-columns-binding="$ctrl.cols" 
-			disable-filter="!$ctrl.isFiltersEnabled" show-filter="$ctrl.isFiltersVisible">
-			<colgroup>
-				<col width="5%" />
-	         		<col width="35%" />
-	         		<col width="30%" />
-	         		<col width="30%" />
-			</colgroup>
-			<tr ng-repeat="row in $data" ng-class="{ 'danger': row.money < 0, 'success': row.money > 800}">
-				<td data-title="'Id'" header="'componentHeaderCheckbox.html'" ng-if="true">
-					<input type="checkbox" ng-model="$ctrl.checkboxes.items[row.id]" />
-				</td>
-				<td data-title="'Name'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-bind="row.name" ng-if="true"></td>
-				<td data-title="'Age'" filter="{age: 'number'}" sortable="$ctrl.isSortable?'age':false" header-class="'bg-warning'" ng-bind="row.age" ng-if="true"></td>
-				<td data-title="'Money'" filter="{money:'number'}" sortable="$ctrl.isSortable?'money':false" ng-bind="row.money | currency:'$'" ng-if="true"></td>
-			</tr>
-		</table>
+		<div class="col-xs-12">
+			<table class="table table-condensed table-bordered table-striped table-hover" 
+				ng-table="$ctrl.tableParams" ng-table-columns-binding="$ctrl.cols" 
+				disable-filter="!$ctrl.isFiltersEnabled" show-filter="$ctrl.isFiltersVisible">
+				<colgroup>
+		          <col width="20%" />
+		          <col width="30%" />
+		          <col width="30%" />
+		          <col width="20%" />
+		        </colgroup>
+				<tr ng-repeat="row in $data" ng-class="{'success': row.num == 10}">
+					<td data-title="'名称'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-bind="row.name" ng-if="true"></td>
+					<td data-title="'下载 / 访问'" filter="{link:'text'}" ng-bind="row.link" ng-if="true"></td>
+					<td data-title="'简介'" filter="{descr:'text'}" ng-bind="row.descr" ng-if="true"></td>
+					<td data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" header-class="'bg-warning'" ng-bind="row.num" ng-if="true"></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

@@ -12,11 +12,11 @@ angular.module('base').component('baseList',{
 			// 表格实例
 			self.tableParams = new NgTableParams({
 				count:5,
-				filter:{name:'a'},
-				page:2,
+//				filter:{num:10},
+				page:1,
 				sorting:{name:'desc'}
 			},{
-				counts:[5,10,20],
+				counts:[5,10,15],
 				dataset:self.brzDataSet,
 				filterOptions:{
 					filterComparator: false	// 模糊过滤
@@ -46,35 +46,6 @@ angular.module('base').component('baseList',{
 		    
 			// 是否启用排序
 			self.isSortable = true;
-			
-			self.checkboxes = {
-		      checked: false,
-		      items: {}
-		    };
-		    // 监控全选
-		    $scope.$watch(function() {
-		      return self.checkboxes.checked;
-		    }, function(value) {
-		      angular.forEach(self.brzDataSet, function(item) {
-		        self.checkboxes.items[item.id] = value;
-		      });
-		    });
-		    // 监控选中行的数据
-		    $scope.$watch(function() {
-		      return self.checkboxes.items;
-		    }, function(values) {
-		      var checked = 0, unchecked = 0,
-		          total = self.brzDataSet.length;
-		      angular.forEach(self.brzDataSet, function(item) {
-		        checked   +=  (self.checkboxes.items[item.id]) || 0;
-		        unchecked += (!self.checkboxes.items[item.id]) || 0;
-		      });
-		      if ((unchecked == 0) || (checked == 0)) {
-		        self.checkboxes.checked = (checked == total);
-		      }
-		      // grayed checkbox
-		      angular.element($element[0].getElementsByClassName("select-all")).prop("indeterminate", (checked != 0 && unchecked != 0));
-		    }, true);
 		}
 	}]
 });
