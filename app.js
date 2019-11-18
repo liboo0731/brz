@@ -10,7 +10,7 @@ define([
 				'oc.lazyLoad',
 				'home']);
 		
-		brzModule.constant('basePath',location.protocol+'//'+location.host+'/brz/brz/data');
+		brzModule.constant('basePath',location.protocol+'//'+location.host+'/brz/data');
 		
 		brzModule.config(['$compileProvider','$httpProvider','$qProvider','$stateProvider',function($compileProvider,$httpProvider,$qProvider,$stateProvider){
 			$compileProvider.debugInfoEnabled(false);
