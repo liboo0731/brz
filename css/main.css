@@ -1,0 +1,6 @@
+/* 省略文本 */
+.dots {width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+/* 表格 */
+.table-custom {table-layout: fixed;}
+/* 行间距 */
+.row-margin-bottom {margin-bottom: 15px}

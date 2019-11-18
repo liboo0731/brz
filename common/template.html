@@ -74,17 +74,26 @@
 			<table class="table table-condensed table-bordered table-striped table-hover table-custom" 
 				ng-table="$ctrl.tableParams" ng-table-columns-binding="$ctrl.cols" 
 				disable-filter="!$ctrl.isFiltersEnabled" show-filter="$ctrl.isFiltersVisible">
+				<colgroup class="hidden-xs">
+		          <col width="20%" />
+		          <col width="30%" />
+		          <col width="35%" />
+		          <col width="15%" />
+		        </colgroup>
 				<tr ng-repeat="row in $data" ng-class="{'success': row.num == 10}">
 					<td data-title="'名称'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-if="true">
 						<div class="dots" title="{{row.name}}" ng-bind="row.name"></div>
 					</td>
 					<td data-title="'下载 / 访问'" filter="{link:'text'}" ng-if="true">
-						<div class="dots" title="{{row.link}}" ng-bind="row.link"></div>
+						<div class="dots" title="{{row.link}}">
+							<a ng-href="{{row.link}}">{{row.link}}</a>
+						</div>
 					</td>
 					<td data-title="'简介'" filter="{descr:'text'}" ng-if="true">
 						<div class="dots" title="{{row.descr}}" ng-bind="row.descr"></div>
 					</td>
-					<td data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" ng-bind="row.num" ng-if="true"></td>
+					<td data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" 
+						ng-bind="row.num" ng-if="true" style="text-align: center;"></td>
 				</tr>
 			</table>
 		</div>

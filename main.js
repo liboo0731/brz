@@ -23,6 +23,9 @@ require.config({
     	},
     	'js/angular-resource': {
     		deps: ['js/angular']
+    	},
+    	'home/service': {
+    		deps: ['home/module']
     	}
     },
     urlArgs: resourcesVersion
