@@ -21,8 +21,8 @@ define([
 			url: '/list',
 			component: 'baseList',
 			resolve: {
-				data: ['baseService',function(homeService){
-					return homeService.get().$promise.then(function(resp){
+				data: ['baseService',function(baseService){
+					return baseService.get().$promise.then(function(resp){
 						return resp
 					});
 				}]

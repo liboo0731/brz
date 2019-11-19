@@ -21,8 +21,8 @@ define([
 			url: '/list',
 			component: 'commonList',
 			resolve: {
-				data: ['appService',function(homeService){
-					return homeService.get().$promise.then(function(resp){
+				data: ['appService',function(appService){
+					return appService.get().$promise.then(function(resp){
 						return resp
 					});
 				}]

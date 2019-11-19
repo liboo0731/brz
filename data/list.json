@@ -37,7 +37,7 @@
 		},
 		{
 			"id": 6,
-			"uiSref": "video.list",
+			"uiSref": "video",
 			"imgUrl": "images/ts.jpg",
 			"title": "影视大全",
 			"content": "5"
