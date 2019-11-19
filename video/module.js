@@ -19,7 +19,7 @@ define([
 		});
 		$stateProvider.state('video.list', {
 			url: '/list',
-			component: 'videoList',
+			component: 'commonList',
 			resolve: {
 				data: ['videoService',function(homeService){
 					return homeService.get().$promise.then(function(resp){

@@ -19,7 +19,7 @@ define([
 		});
 		$stateProvider.state('tools.list', {
 			url: '/list',
-			component: 'toolsList',
+			component: 'commonList',
 			resolve: {
 				data: ['toolsService',function(homeService){
 					return homeService.get().$promise.then(function(resp){

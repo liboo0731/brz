@@ -19,7 +19,7 @@ define([
 		});
 		$stateProvider.state('online.list', {
 			url: '/list',
-			component: 'onlineList',
+			component: 'commonList',
 			resolve: {
 				data: ['onlineService',function(homeService){
 					return homeService.get().$promise.then(function(resp){

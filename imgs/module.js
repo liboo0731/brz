@@ -19,7 +19,7 @@ define([
 		});
 		$stateProvider.state('imgs.list', {
 			url: '/list',
-			component: 'imgsList',
+			component: 'commonList',
 			resolve: {
 				data: ['imgsService',function(homeService){
 					return homeService.get().$promise.then(function(resp){

@@ -1,4 +1,4 @@
-angular.module('brz').component('appList',{
+angular.module('brz').component('commonList',{
 	bindings:{
 		data:'<'
 	},
