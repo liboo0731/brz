@@ -1,3 +1,8 @@
+<style type="text/css">
+.dots {width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.table-custom {table-layout: fixed;}
+.row-margin-bottom {margin-bottom: 15px}
+</style>
 <script type="text/javascript">
 	$(document).on('click',function(event){
 		if($(event.target).closest('.btn-group').length==0){
@@ -21,7 +26,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="detail">
+      <a class="navbar-brand" ui-sref="home.detail">
         <span>博人撰</span>
         <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
       </a>
