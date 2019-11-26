@@ -24,8 +24,8 @@ require.config({
     	'js/angular-resource': {
     		deps: ['js/angular']
     	},
-    	'home/service': {
-    		deps: ['home/module']
+    	'all/service': {
+    		deps: ['all/module']
     	}
     },
     urlArgs: resourcesVersion

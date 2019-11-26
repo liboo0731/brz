@@ -3,12 +3,12 @@ define([
 		'js/angular-ui-router',
 		'js/angular-resource',
 		'plugins/ng-table/ng-table',
-		'home/service'
+		'all/service'
 	],function(){
 		var brzModule=angular.module('brz',[
 				'ui.router',
 				'oc.lazyLoad',
-				'home']);
+				'all']);
 		
 		brzModule.constant('basePath',location.protocol+'//'+location.host+'/brz/data');
 		
@@ -23,10 +23,10 @@ define([
 			$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 			
 			$stateProvider.state({
-				name:'base.**',
-				url: '/base',
+				name:'all.**',
+				url: '/all',
 				lazyLoad: function($transition$){
-					return $transition$.injector().get('$ocLazyLoad').load(['base/module']);
+					return $transition$.injector().get('$ocLazyLoad').load(['all/module']);
 				}
 			});
 			$stateProvider.state({
@@ -36,46 +36,11 @@ define([
 					return $transition$.injector().get('$ocLazyLoad').load(['detail/module']);
 				}
 			});
-			$stateProvider.state({
-				name:'app.**',
-				url: '/app',
-				lazyLoad: function($transition$){
-					return $transition$.injector().get('$ocLazyLoad').load(['app/module']);
-				}
-			});
-			$stateProvider.state({
-				name:'imgs.**',
-				url: '/imgs',
-				lazyLoad: function($transition$){
-					return $transition$.injector().get('$ocLazyLoad').load(['imgs/module']);
-				}
-			});
-			$stateProvider.state({
-				name:'online.**',
-				url: '/online',
-				lazyLoad: function($transition$){
-					return $transition$.injector().get('$ocLazyLoad').load(['online/module']);
-				}
-			});
-			$stateProvider.state({
-				name:'tools.**',
-				url: '/tools',
-				lazyLoad: function($transition$){
-					return $transition$.injector().get('$ocLazyLoad').load(['tools/module']);
-				}
-			});
-			$stateProvider.state({
-				name:'video.**',
-				url: '/video',
-				lazyLoad: function($transition$){
-					return $transition$.injector().get('$ocLazyLoad').load(['video/module']);
-				}
-			});
 		}]);
 		
 		brzModule.run(['$urlService','$state',function($urlService,$state){
 			if(!$urlService.url()){
-				$state.go('home');
+				$state.go('all');
 			}
 		}]);
 		

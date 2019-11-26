@@ -1,34 +1,34 @@
 define([
 	'js/angular'
 	],function(){
-	var homeModule=angular.module('app', [
+	var homeModule=angular.module('all', [
 			'ui.router',
 			'ngResource',
 			'ngTable',
 			'oc.lazyLoad']);
 	homeModule.config(['$stateProvider',function($stateProvider){
 		$stateProvider.state({
-			name:'app',
-			url: '/app',
-			redirectTo: 'app.list',
+			name:'all',
+			url: '/all',
+			redirectTo: 'all.list',
 			lazyLoad: function($transition$){
 				return $transition$.injector().get('$ocLazyLoad').load([
-					'app/service'
+					'all/service'
 				]);
 			}
 		});
-		$stateProvider.state('app.list', {
+		$stateProvider.state('all.list', {
 			url: '/list',
-			component: 'commonList',
+			component: 'allList',
 			resolve: {
-				data: ['appService',function(appService){
-					return appService.get().$promise.then(function(resp){
+				data: ['allService',function(allService){
+					return allService.get().$promise.then(function(resp){
 						return resp
 					});
 				}]
 			},
 			lazyLoad: function($transition$){
-				return $transition$.injector().get('$ocLazyLoad').load(['common/component']);
+				return $transition$.injector().get('$ocLazyLoad').load(['all/component']);
 			}
 		});
 	}]);

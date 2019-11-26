@@ -1,8 +1,8 @@
-angular.module('tools').component('toolsList',{
+angular.module('all').component('allList',{
 	bindings:{
 		data:'<'
 	},
-	templateUrl: 'tools/template.html?'+resourcesVersion,
+	templateUrl: 'all/template.html?'+resourcesVersion,
 	controller: ['NgTableParams','$scope','$element',function(NgTableParams,$scope,$element){
 		var self = this;
 		
