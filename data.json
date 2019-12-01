@@ -1,1 +1,23 @@
-{"title":"既然选择了远方，便只顾风雨兼程！","subtitle":"公众号：博人撰","data":[{"id":"1","name":"【APP】【广告】广告过滤大师","num":"8","descr":"过滤各主流视频软件广告","link":"https://www.baidu.com"},{"id":"2","name":"【APP】【视频】每天影视","num":"9","descr":"全网视频资源播放","link":"https://www.baidu.com"},{"id":"3","name":"【APP】【浏览器】Via浏览器","num":"10","descr":"支持“电脑模式”，第三方插件，资源嗅探，查看源码，界面自定义","link":"https://www.baidu.com"},{"id":"4","name":"【APP】【终端】Termux","num":"8","descr":"随身携带的Linux高级模拟终端","link":"https://www.baidu.com"},{"id":"5","name":"【WEB】【搜索】Magi","num":"9","descr":"一个基于机器学习的搜索引擎，它通过检索网络的自然语言文本，将其中的知识提炼出来，形成结构化数据。","link":"https://magi.com/"},{"id":"6","name":"【WIN】【下载】迅雷X去广告版","num":"8","descr":"只保留下载功能","link":"https://www.lanzous.com/b03y9lgaj"},{"id":"7","name":"【WIN】【截图】FSCapture","num":"10","descr":"截图，截长图，编辑，视频录制等","link":"https://www.baidu.com"},{"id":"8","name":"【WIN】【搜索】everything","num":"8","descr":"本地搜索神器","link":"https://www.baidu.com"},{"id":"9","name":"【WIN】【搜索】闪电搜索","num":"9","descr":"体积小巧，不会占内存，搜索速度快，支持预览","link":"https://www.baidu.com"},{"id":"10","name":"【WIN】【工具】uTools","num":"8","descr":"一个极简、又强大的多功能桌面软件集合，支持自主开发。","link":"https://www.baidu.com"}]}
+{
+"title":"既然选择了远方，便只顾风雨兼程！",
+"subtitle":"公众号：博人撰",
+"xstitle":"高效、便捷！",
+"data":[
+{"id":1,"name":"【APP】【广告】广告过滤大师","num":1,"descr":"过滤各主流视频软件广告","link":"http://t.cn/AigHHKCg"},
+{"id":2,"name":"【APP】【视频】每天影视","num":2,"descr":"全网视频资源播放","link":"http://t.cn/AigHHW07"},
+{"id":3,"name":"【APP】【浏览器】Via浏览器","num":3,"descr":"支持“电脑模式”，第三方插件，资源嗅探，查看源码，界面自定义","link":"http://t.cn/AigHYhHr"},
+{"id":4,"name":"【APP】【终端】Termux","num":1,"descr":"随身携带的Linux高级模拟终端","link":"http://t.cn/AigHYGfT"},
+{"id":5,"name":"【WEB】【搜索】Magi","num":2,"descr":"一个基于机器学习的搜索引擎，它通过检索网络的自然语言文本，将其中的知识提炼出来，形成结构化数据","link":"https://magi.com/"},
+{"id":6,"name":"【WIN】【下载】迅雷X去广告版","num":1,"descr":"只保留下载功能","link":"https://www.lanzous.com/b03y9lgaj"},
+{"id":7,"name":"【WIN】【截图】FSCapture","num":3,"descr":"截图，截长图，编辑，视频录制等","link":"http://t.cn/AigHHeXV"},
+{"id":8,"name":"【WIN】【搜索】everything","num":1,"descr":"体积小，界面简洁，快速搜索，占用系统资低，实时跟踪文件变化，通过http或ftp形式分享搜索","link":"https://www.voidtools.com/zh-cn/"},
+{"id":9,"name":"【WIN】【搜索】闪电搜索","num":2,"descr":"体积小巧，不会占内存，搜索速度快，支持预览","link":"http://t.cn/AigHgbKq"},
+{"id":10,"name":"【WIN】【工具】uTools","num":1,"descr":"一个极简、又强大的多功能桌面软件集合，支持自主开发","link":"https://www.u.tools/"},
+{"id":11,"name":"【APP】【播放】MX Player","num":1,"descr":"一款安卓系统非常强大的视频播放工具","link":"http://t.cn/AigHRDzS"},
+{"id":12,"name":"【APP】【网盘】蓝奏云","num":1,"descr":"下载无任何限制，无验证码等影响用户体验限制。","link":"http://t.cn/AigTsXLl"},
+{"id":13,"name":"【APP】【视频】大象影视","num":1,"descr":"全网视频资源播放","link":"http://t.cn/AigHHMti"},
+{"id":14,"name":"【APP】【代码】OpenHub for GitHub","num":1,"descr":"GitHub第三方客户端","link":"http://t.cn/AigHQq6u"},
+{"id":15,"name":"【WIN】【截图】Snipaste","num":2,"descr":"一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上","link":"http://t.cn/AigHQAfB"},
+{"id":16,"name":"【WIN】【下载】PanDownload","num":2,"descr":"百度云第三方下载工具","link":"http://www.pandownload.com/"}
+]
+}

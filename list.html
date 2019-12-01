@@ -36,15 +36,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-			<div class="page-header">
+			<div class="page-header hidden-xs">
 			  <h1>{{$ctrl.data.title}} <small ng-bind="$ctrl.data.subtitle"></small></h1>
 			</div>
+			<h2 class="visible-xs" ng-bind="$ctrl.data.xstitle"></h2>
 		</div>
 	</div>
 	<div class="row row-margin-bottom">
      	<form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
 			<div class="input-group">
-				<span class="input-group-btn">
+				<span class="input-group-btn hidden-xs">
 		        	<button type="button" class="btn btn-default dropdown-toggle" onclick="$(this).parent().toggleClass('open');" aria-haspopup="true" aria-expanded="false">显示列 <span class="caret"></span></button>
 		        	<ul class="dropdown-menu" onclick="saveCol(this)">
 			        	<li ng-repeat="col in $ctrl.cols">
@@ -64,14 +65,14 @@
 	<div class="row row-margin-bottom">
 		<div class="col-xs-8">
 	        <label class="checkbox-inline">
-	        	<input type="checkbox" ng-model="$ctrl.isFiltersEnabled" /> 启用过滤行
+	        	<input type="checkbox" ng-model="$ctrl.isFiltersEnabled" /> 启用列搜索
 	        </label>
 	        <label class="checkbox-inline">
-	          	<input type="checkbox" ng-model="$ctrl.isFiltersVisible" /> 显示过滤行
+	          	<input type="checkbox" ng-model="$ctrl.isFiltersVisible" /> 显示列搜索
 	        </label>
 	      </div>
 	      <div class="col-xs-4">
-	        <button class="btn bt-sm btn-default pull-right" ng-disabled="!$ctrl.tableParams.hasFilter()" ng-click="$ctrl.tableParams.filter({})">清除过滤内容</button>
+	        <button class="btn bt-sm btn-default pull-right" ng-disabled="!$ctrl.tableParams.hasFilter()" ng-click="$ctrl.tableParams.filter({})">清除搜索内容</button>
 		</div>
 	</div>
 	<div class="row">
@@ -84,17 +85,22 @@
 		          <col width="40%" />
 		          <col width="15%" />
 		        </colgroup>
-				<tr ng-repeat="row in $data" ng-class="{'success': row.num == 10}">
+				<tr ng-repeat="row in $data" ng-class="{'success': row.num == 3}">
 					<td data-title="'名称'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-if="true">
-						<a ng-href="{{row.link}}">
+						<a ng-href="{{row.link}}" target="_blank">
 							<div class="dots" title="{{row.name}}" ng-bind="row.name"></div>
 						</a>
 					</td>
-					<td data-title="'简介'" filter="{descr:'text'}" ng-if="true">
+					<td class="hidden-xs" header-class="'hidden-xs'" data-title="'简介'" filter="{descr:'text'}" ng-if="true">
 						<div class="dots" title="{{row.descr}}" ng-bind="row.descr"></div>
 					</td>
-					<td data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" 
-						ng-bind="row.num" ng-if="true" style="text-align: center;"></td>
+					<td class="hidden-xs" header-class="'hidden-xs'" data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" ng-if="true" style="text-align: center;">
+						<div>
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span ng-show="row.num == 2 || row.num == 3" class="glyphicon glyphicon-star-empty"></span>
+							<span ng-show="row.num == 3" class="glyphicon glyphicon-star-empty"></span>
+						</div>		
+					</td>
 				</tr>
 			</table>
 		</div>

@@ -51,7 +51,7 @@ homeModule.component('homeList',{
 			self.tableParams = new NgTableParams({
 				count:5,
 				page:1,
-				sorting:{name:'desc'}
+				sorting:{id:'desc'}
 			},{
 				counts:[5,10,15],
 				dataset:self.brzDataSet,

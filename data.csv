@@ -1,11 +1,17 @@
 id,name,num,descr,link
-1,【APP】【广告】广告过滤大师,8,过滤各主流视频软件广告,https://www.baidu.com
-2,【APP】【视频】每天影视,9,全网视频资源播放,https://www.baidu.com
-3,【APP】【浏览器】Via浏览器,10,支持“电脑模式”，第三方插件，资源嗅探，查看源码，界面自定义,https://www.baidu.com
-4,【APP】【终端】Termux,8,随身携带的Linux高级模拟终端,https://www.baidu.com
-5,【WEB】【搜索】Magi,9,一个基于机器学习的搜索引擎，它通过检索网络的自然语言文本，将其中的知识提炼出来，形成结构化数据。,https://magi.com/
-6,【WIN】【下载】迅雷X去广告版,8,只保留下载功能,https://www.lanzous.com/b03y9lgaj
-7,【WIN】【截图】FSCapture,10,截图，截长图，编辑，视频录制等,https://www.baidu.com
-8,【WIN】【搜索】everything,8,本地搜索神器,https://www.baidu.com
-9,【WIN】【搜索】闪电搜索,9,体积小巧，不会占内存，搜索速度快，支持预览,https://www.baidu.com
-10,【WIN】【工具】uTools,8,一个极简、又强大的多功能桌面软件集合，支持自主开发。,https://www.baidu.com
+1,【APP】【广告】广告过滤大师,1,过滤各主流视频软件广告,http://t.cn/AigHHKCg
+2,【APP】【视频】每天影视,2,全网视频资源播放,http://t.cn/AigHHW07
+3,【APP】【浏览器】Via浏览器,3,支持“电脑模式”，第三方插件，资源嗅探，查看源码，界面自定义,http://t.cn/AigHYhHr
+4,【APP】【终端】Termux,1,随身携带的Linux高级模拟终端,http://t.cn/AigHYGfT
+5,【WEB】【搜索】Magi,2,一个基于机器学习的搜索引擎，它通过检索网络的自然语言文本，将其中的知识提炼出来，形成结构化数据,https://magi.com/
+6,【WIN】【下载】迅雷X去广告版,1,只保留下载功能,https://www.lanzous.com/b03y9lgaj
+7,【WIN】【截图】FSCapture,3,截图，截长图，编辑，视频录制等,http://t.cn/AigHHeXV
+8,【WIN】【搜索】everything,1,体积小，界面简洁，快速搜索，占用系统资低，实时跟踪文件变化，通过http或ftp形式分享搜索,https://www.voidtools.com/zh-cn/
+9,【WIN】【搜索】闪电搜索,2,体积小巧，不会占内存，搜索速度快，支持预览,http://t.cn/AigHgbKq
+10,【WIN】【工具】uTools,1,一个极简、又强大的多功能桌面软件集合，支持自主开发,https://www.u.tools/
+11,【APP】【播放】MX Player,1,一款安卓系统非常强大的视频播放工具,http://t.cn/AigHRDzS
+12,【APP】【网盘】蓝奏云,1,下载无任何限制，无验证码等影响用户体验限制。,http://t.cn/AigTsXLl
+13,【APP】【视频】大象影视,1,全网视频资源播放,http://t.cn/AigHHMti
+14,【APP】【代码】OpenHub for GitHub,1,GitHub第三方客户端,http://t.cn/AigHQq6u
+15,【WIN】【截图】Snipaste,2,一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上,http://t.cn/AigHQAfB
+16,【WIN】【下载】PanDownload,2,百度云第三方下载工具,http://www.pandownload.com/
