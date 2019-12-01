@@ -34,7 +34,7 @@ homeModule.component('homeDetail',{
 	}]
 });
 homeModule.factory('homeService',['$resource','basePath', function($resource,basePath){
-	return $resource(basePath+'list.json',{},{});
+	return $resource(basePath+'data.json',{},{});
 }]);
 homeModule.component('homeList',{
 	bindings:{
