@@ -2,6 +2,9 @@
 .dots {width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .table-custom {table-layout: fixed;}
 .row-margin-bottom {margin-bottom: 15px}
+.navbar {margin-bottom: 0}
+.pre-img {width: 64px; height: 64px;}
+.td-center {text-align: center;}
 </style>
 <script type="text/javascript">
 	$(document).on('click',function(event){
@@ -39,9 +42,13 @@
 			<div class="page-header hidden-xs">
 			  <h1>{{$ctrl.data.title}} <small ng-bind="$ctrl.data.subtitle"></small></h1>
 			</div>
-			<h2 class="visible-xs" ng-bind="$ctrl.data.xstitle"></h2>
+			<div class="page-header visible-xs">
+			  <h1>{{$ctrl.data.xstitle}} <small ng-bind=""></small></h1>
+			</div>
 		</div>
 	</div>
+</div>
+<div class="container hidden-xs">
 	<div class="row row-margin-bottom">
      	<form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
 			<div class="input-group">
@@ -94,7 +101,7 @@
 					<td class="hidden-xs" header-class="'hidden-xs'" data-title="'简介'" filter="{descr:'text'}" ng-if="true">
 						<div class="dots" title="{{row.descr}}" ng-bind="row.descr"></div>
 					</td>
-					<td class="hidden-xs" header-class="'hidden-xs'" data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" ng-if="true" style="text-align: center;">
+					<td class="td-center hidden-xs" header-class="'hidden-xs'" data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" ng-if="true">
 						<div>
 							<span class="glyphicon glyphicon-star-empty"></span>
 							<span ng-show="row.num == 2 || row.num == 3" class="glyphicon glyphicon-star-empty"></span>
@@ -103,6 +110,24 @@
 					</td>
 				</tr>
 			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container visible-xs">
+	<div class="row">
+		<div class="col-xs-12 media" ng-repeat="row in $ctrl.data.data">
+		  <div class="media-left">
+		    <a ng-href="{{row.link}}" target="_blank">
+		      <img class="pre-img media-object" ng-src="{{'avatar.jpg'}}" alt="BRZ">
+		    </a>
+		  </div>
+		  <div class="media-body">
+		    <a ng-href="{{row.link}}" target="_blank">
+	    		<b class="media-heading" ng-bind="row.name"></b>
+		    </a>
+		    <p ng-bind="row.descr"></p>
+		  </div>
 		</div>
 	</div>
 </div>

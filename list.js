@@ -53,7 +53,8 @@ homeModule.component('homeList',{
 				page:1,
 				sorting:{id:'desc'}
 			},{
-				counts:[5,10,15],
+				paginationMaxBlocks:5,
+				counts:[5,15,30],
 				dataset:self.brzDataSet,
 				filterOptions:{
 					filterComparator: false
