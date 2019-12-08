@@ -10,7 +10,7 @@ id,name,num,descr,link
 9,【WIN】【搜索】闪电搜索,2,体积小巧，不会占内存，搜索速度快，支持预览,http://t.cn/AigHgbKq
 10,【WIN】【工具】uTools,1,一个极简、又强大的多功能桌面软件集合，支持自主开发,https://www.u.tools/
 11,【APP】【播放】MX Player,1,一款安卓系统非常强大的视频播放工具,http://t.cn/AigHRDzS
-12,【APP】【网盘】蓝奏云,1,下载无任何限制，无验证码等影响用户体验限制。,http://t.cn/AigTsXLl
+12,【APP】【网盘】蓝奏云,1,下载无任何限制，无验证码等影响用户体验限制,http://t.cn/AigTsXLl
 13,【APP】【视频】大象影视,1,全网视频资源播放,http://t.cn/AigHHMti
 14,【APP】【代码】OpenHub for GitHub,1,GitHub第三方客户端,http://t.cn/AigHQq6u
 15,【WIN】【截图】Snipaste,2,一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上,http://t.cn/AigHQAfB
@@ -18,3 +18,10 @@ id,name,num,descr,link
 17,【APP】【浏览器】UPX,1,可以访问youtube，你懂的！,http://t.cn/AiepuPbK
 18,【APP】【视频】鹿影视,2,全网视频资源播放,http://t.cn/Aiep3q9n
 19,【APP】【视频】极光影院,2,智能电视全网视频资源播放,http://t.cn/Aiep3Izn
+20,【WEB】【Chrome插件】Search to Play the Song,2,各大音乐网站，及搜及听,https://chrome.google.com/webstore/detail/search-to-play-the-song/anfmgjkkbagjfdejhbjdiapgkbhpigpm?utm_source=chrome-ntp-icon
+21,【WEB】【Chrome插件】Fatkun图片批量下载,3,按指定规则批量重命名下载图像,https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf?utm_source=chrome-ntp-icon
+22,【WEB】【Chrome插件】Video DownloadHelper,3,嗅探并可以下载当前页面视频及图片资源,https://chrome.google.com/webstore/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk?utm_source=chrome-ntp-icon
+23,【WEB】【Chrome插件】书签侧边栏,2,在浏览器视图区左侧添加固定式的, 管理所有书签的侧边栏,https://chrome.google.com/webstore/detail/bookmark-sidebar/jdbnofccmhefkmjbkkdkfiicjkgofkdh?utm_source=chrome-ntp-icon
+24,【WEB】【Chrome插件】AdGuard 广告拦截器,2,一款无与伦比的广告拦截扩展，用以对抗各式广告与弹窗,https://chrome.google.com/webstore/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg?utm_source=chrome-ntp-icon
+25,【WEB】【Chrome插件】User-Agent Switcher for Chrome,2,模拟各种类型平台及浏览器访问网页,https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg?utm_source=chrome-ntp-icon
+26,【WEB】【Chrome插件】google-access-helper-master,3,帮助你访问Chrome商店,http://t.cn/Aie06EcH
