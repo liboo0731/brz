@@ -1,0 +1,24 @@
+<form name="userGroupForm" ng-submit="$ctrl.submit($event,userGroupForm)" novalidate>
+    <div class="form-group">
+        <label class="control-label" for="name">群组名</label>
+        <input
+            class="form-control"
+            ng-model="$ctrl.userGroup.name"
+            ng-model-options="{debounce:500}"
+            name="name"
+            type="text"
+            autocomplete="off"
+            autofocus="autofocus"
+            check-user-groups-name="$ctrl.resolve.data"
+            ng-pattern="/^[\u4E00-\u9FA5\uf900-\ufa2d\w\s.]*$/"
+            ng-maxlength="18"
+            required>
+        <div class="help-block form-error" ng-show="userGroupForm.$submitted && userGroupForm.name.$error.required">请输入群组名</div>
+        <div class="help-block form-error" ng-show="userGroupForm.$submitted && !userGroupForm.name.$error.maxlength && userGroupForm.name.$error.pattern">可输入汉字、英文字母、数字、下划线和英文点</div>
+        <div class="help-block form-error" ng-show="userGroupForm.$submitted && userGroupForm.name.$error.maxlength">不能多于18个字符</div>
+        <div class="help-block form-error" ng-show="userGroupForm.name.$error.uniqueName">已存在该群组</div>
+    </div>
+	<div class="form-group">
+		<button class="btn btn-primary btn-submit" type="submit">提交</button>
+	</div>
+</form>
