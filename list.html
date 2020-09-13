@@ -6,6 +6,7 @@
 .pre-img {width: 64px; height: 64px;}
 .td-center {text-align: center;}
 </style>
+
 <script type="text/javascript">
 	$(document).on('click',function(event){
 		if($(event.target).closest('.btn-group').length==0){
@@ -26,6 +27,7 @@
 		localStorage.setItem('titles',angular.toJson(titles));
 	}
 </script>
+
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
@@ -36,6 +38,7 @@
     </div>
   </div>
 </nav>
+
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
@@ -48,6 +51,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="container hidden-xs">
 	<div class="row row-margin-bottom">
      	<form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">

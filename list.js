@@ -49,12 +49,12 @@ homeModule.component('homeList',{
 		
 			
 			self.tableParams = new NgTableParams({
-				count:5,
+				count:10,
 				page:1,
 				sorting:{id:'desc'}
 			},{
 				paginationMaxBlocks:5,
-				counts:[5,15,30],
+				counts:[10,30,50],
 				dataset:self.brzDataSet,
 				filterOptions:{
 					filterComparator: false
