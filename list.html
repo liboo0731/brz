@@ -5,6 +5,9 @@
 .navbar {margin-bottom: 0}
 .pre-img {width: 64px; height: 64px;}
 .td-center {text-align: center;}
+.dropdown-menu {min-width: 80px}
+
+
 </style>
 
 <script type="text/javascript">
@@ -26,112 +29,128 @@
 		};
 		localStorage.setItem('titles',angular.toJson(titles));
 	}
+
+
 </script>
 
 <nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="home.detail">
-        <span>博人撰</span>
-        <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-      </a>
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home.detail">
+                <span>博人撰</span>
+                <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+            </a>
+        </div>
     </div>
-  </div>
 </nav>
 
 <div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="page-header hidden-xs">
-			  <h1>{{$ctrl.data.title}} <small ng-bind="$ctrl.data.subtitle"></small></h1>
-			</div>
-			<div class="page-header visible-xs">
-			  <h1>{{$ctrl.data.xstitle}} <small ng-bind=""></small></h1>
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header hidden-xs">
+                <h1>{{$ctrl.data.title}} <small ng-bind="$ctrl.data.subtitle"></small></h1>
+            </div>
+            <div class="page-header visible-xs">
+                <h1>{{$ctrl.data.xstitle}} <small ng-bind=""></small></h1>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container hidden-xs">
-	<div class="row row-margin-bottom">
-     	<form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
-			<div class="input-group">
-				<span class="input-group-btn hidden-xs">
-		        	<button type="button" class="btn btn-default dropdown-toggle" onclick="$(this).parent().toggleClass('open');" aria-haspopup="true" aria-expanded="false">显示列 <span class="caret"></span></button>
-		        	<ul class="dropdown-menu" onclick="saveCol(this)">
-			        	<li ng-repeat="col in $ctrl.cols">
-							<label class="checkbox-inline"><input type="checkbox" title="{{col.title()}}" ng-model-options="{ getterSetter: true }" ng-model="col.show"/> {{col.title()}}</label>
-						</li>
-		        	</ul>
-		      	</span>
-				<input type="text" class="form-control" placeholder="请输入需要查询的内容" name="searchTerm" ng-model="$ctrl.globalSearchTerm" required />
-				<span class="input-group-btn">
-					<button class="btn btn-primary" type="submit" ng-disabled="$ctrl.searchForm.$invalid">
-				    	<span class="glyphicon glyphicon-search"></span>
-				    </button>
-				</span>
-			</div>
-		</form>
-	</div>
-	<div class="row row-margin-bottom">
-		<div class="col-xs-8">
-	        <label class="checkbox-inline">
-	        	<input type="checkbox" ng-model="$ctrl.isFiltersEnabled" /> 启用列搜索
-	        </label>
-	        <label class="checkbox-inline">
-	          	<input type="checkbox" ng-model="$ctrl.isFiltersVisible" /> 显示列搜索
-	        </label>
-	      </div>
-	      <div class="col-xs-4">
-	        <button class="btn bt-sm btn-default pull-right" ng-disabled="!$ctrl.tableParams.hasFilter()" ng-click="$ctrl.tableParams.filter({})">清除搜索内容</button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<table class="table table-condensed table-bordered table-striped table-hover table-custom" 
-				ng-table="$ctrl.tableParams" ng-table-columns-binding="$ctrl.cols" 
-				disable-filter="!$ctrl.isFiltersEnabled" show-filter="$ctrl.isFiltersVisible">
-				<colgroup class="hidden-xs">
-		          <col width="45%" />
-		          <col width="40%" />
-		          <col width="15%" />
-		        </colgroup>
-				<tr ng-repeat="row in $data" ng-class="{'success': row.num == 3}">
-					<td data-title="'名称'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-if="true">
-						<a ng-href="{{row.link}}" target="_blank">
-							<div class="dots" title="{{row.name}}" ng-bind="row.name"></div>
-						</a>
-					</td>
-					<td class="hidden-xs" header-class="'hidden-xs'" data-title="'简介'" filter="{descr:'text'}" ng-if="true">
-						<div class="dots" title="{{row.descr}}" ng-bind="row.descr"></div>
-					</td>
-					<td class="td-center hidden-xs" header-class="'hidden-xs'" data-title="'推荐'" filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" ng-if="true">
-						<div>
-							<span class="glyphicon glyphicon-star-empty"></span>
-							<span ng-show="row.num == 2 || row.num == 3" class="glyphicon glyphicon-star-empty"></span>
-							<span ng-show="row.num == 3" class="glyphicon glyphicon-star-empty"></span>
-						</div>		
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
+    <div class="row row-margin-bottom">
+        <form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
+            <div class="input-group">
+                <div class="input-group-btn hidden-xs">
+                    <button type="button" class="btn btn-default dropdown-toggle"
+                            onclick="$(this).parent().toggleClass('open');" aria-haspopup="true" aria-expanded="false">
+                        显示列 <span
+                            class="caret"></span></button>
+                    <ul class="dropdown-menu" onclick="saveCol(this)">
+                        <li class="text-center" ng-repeat="col in $ctrl.cols">
+                            <label class="checkbox-inline"><input type="checkbox" title="{{col.title()}}"
+                                                                  ng-model-options="{ getterSetter: true }"
+                                                                  ng-model="col.show"/> {{col.title()}}</label>
+                        </li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" placeholder="请输入需要查询的内容" ng-model="$ctrl.globalSearchTerm"
+                       required>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-disabled="!$ctrl.tableParams.hasFilter()"
+                            ng-click="$ctrl.tableParams.filter({});$ctrl.globalSearchTerm=''" aria-label="Help"><span
+                            class="glyphicon glyphicon-refresh"></span></button>
+                    <button class="btn btn-primary" type="submit" ng-disabled="$ctrl.searchForm.$invalid">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row row-margin-bottom">
+        <div class="col-xs-12">
+            <label class="checkbox-inline">
+                <input type="checkbox" ng-model="$ctrl.isFiltersEnabled"/> <span
+                    style="line-height: 26px;"> 启用列搜索</span>
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" ng-model="$ctrl.isFiltersVisible"/> <span
+                    style="line-height: 26px;"> 显示列搜索</span>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-condensed table-bordered table-striped table-hover table-custom"
+                   ng-table="$ctrl.tableParams" ng-table-columns-binding="$ctrl.cols"
+                   disable-filter="!$ctrl.isFiltersEnabled" show-filter="$ctrl.isFiltersVisible">
+                <colgroup class="hidden-xs">
+                    <col width="10%"/>
+                    <col width="35%"/>
+                    <col width="40%"/>
+                    <col width="15%"/>
+                </colgroup>
+                <tr ng-repeat="row in $data" ng-class="{'success': row.num == 3}">
+                    <td data-title="'序列'" filter="{id:'number'}" sortable="$ctrl.isSortable?'id':false" ng-if="true">
+                        <div class="dots" title="{{row.id}}" ng-bind="row.id"></div>
+                    </td>
+                    <td data-title="'名称'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-if="true">
+                        <a ng-href="{{row.link}}" target="_blank">
+                            <div class="dots" title="{{row.name}}" ng-bind="row.name"></div>
+                        </a>
+                    </td>
+                    <td class="hidden-xs" header-class="'hidden-xs'" data-title="'简介'" filter="{descr:'text'}"
+                        ng-if="true">
+                        <div class="dots" title="{{row.descr}}" ng-bind="row.descr"></div>
+                    </td>
+                    <td class="td-center hidden-xs" header-class="'hidden-xs'" data-title="'推荐'"
+                        filter="{num: 'number'}" sortable="$ctrl.isSortable?'num':false" ng-if="true">
+                        <div>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span ng-show="row.num == 2 || row.num == 3" class="glyphicon glyphicon-star-empty"></span>
+                            <span ng-show="row.num == 3" class="glyphicon glyphicon-star-empty"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 
 <div class="container visible-xs">
-	<div class="row">
-		<div class="col-xs-12 media" ng-repeat="row in $ctrl.data.data">
-		  <div class="media-left">
-		    <a ng-href="{{row.link}}" target="_blank">
-		      <img class="pre-img media-object" ng-src="{{'avatar.jpg'}}" alt="BRZ">
-		    </a>
-		  </div>
-		  <div class="media-body">
-		    <a ng-href="{{row.link}}" target="_blank">
-	    		<b class="media-heading" ng-bind="row.name"></b>
-		    </a>
-		    <p ng-bind="row.descr"></p>
-		  </div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12 media" ng-repeat="row in $ctrl.data.data">
+            <div class="media-left">
+                <a ng-href="{{row.link}}" target="_blank">
+                    <img class="pre-img media-object" ng-src="{{'avatar.jpg'}}" alt="BRZ">
+                </a>
+            </div>
+            <div class="media-body">
+                <a ng-href="{{row.link}}" target="_blank">
+                    <b class="media-heading" ng-bind="row.name"></b>
+                </a>
+                <p ng-bind="row.descr"></p>
+            </div>
+        </div>
+    </div>
 </div>

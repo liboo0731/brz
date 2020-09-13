@@ -46,12 +46,16 @@ homeModule.component('homeList',{
 		
 		self.$onInit = function(){
 			self.brzDataSet = self.data.data;
-		
-			
+			// JSON 数据字符串id 转数字
+			self.brzDataSet.forEach(function (value) {
+			value['id'] = parseInt(value.id);
+                return value
+            });
+            // 表格实例化
 			self.tableParams = new NgTableParams({
 				count:10,
 				page:1,
-				sorting:{id:'desc'}
+				sorting:{id:'asc'}
 			},{
 				paginationMaxBlocks:5,
 				counts:[10,30,50],
@@ -68,7 +72,7 @@ homeModule.component('homeList',{
 		    		}
 				}]
 			});
-		    
+		    // 全局搜索
 			self.applyGlobalSearch = function(){
 				var term = self.globalSearchTerm;
 				if (self.isInvertedSearch){
@@ -76,11 +80,11 @@ homeModule.component('homeList',{
 				};
 				self.tableParams.filter({$:term});
 			};
-			
+			// 过滤是否可见
 			self.isFiltersVisible = true;
-			
+			// 是否启用过滤
 		    self.isFiltersEnabled = true;
-		    
+		    // 是否启用排序
 			self.isSortable = true;
 		}
 	}]
