@@ -13,7 +13,6 @@ if __name__ == '__main__':
             data_dict = {
                 "title": "既然选择了远方，便只顾风雨兼程！",
                 "subtitle": "公众号：博人撰",
-                "xstitle": "高效、便捷！",
                 "data": [row for row in reader]
             }
             jf.write(json.dumps(data_dict))

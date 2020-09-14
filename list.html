@@ -6,8 +6,6 @@
 .pre-img {width: 64px; height: 64px;}
 .td-center {text-align: center;}
 .dropdown-menu {min-width: 80px}
-
-
 </style>
 
 <script type="text/javascript">
@@ -29,8 +27,6 @@
 		};
 		localStorage.setItem('titles',angular.toJson(titles));
 	}
-
-
 </script>
 
 <nav class="navbar navbar-inverse">
@@ -44,21 +40,20 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container hidden-xs">
     <div class="row">
         <div class="col-xs-12">
-            <div class="page-header hidden-xs">
+            <div class="page-header">
                 <h1>{{$ctrl.data.title}} <small ng-bind="$ctrl.data.subtitle"></small></h1>
-            </div>
-            <div class="page-header visible-xs">
-                <h1>{{$ctrl.data.xstitle}} <small ng-bind=""></small></h1>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container hidden-xs">
-    <div class="row row-margin-bottom">
+<div class="visible-xs" style="height: 30px"></div>
+
+<div class="container">
+    <div class="row row-margin-bottom hidden-xs">
         <form class="col-xs-12" name="$ctrl.searchForm" novalidate ng-submit="$ctrl.applyGlobalSearch()">
             <div class="input-group">
                 <div class="input-group-btn hidden-xs">
@@ -87,7 +82,7 @@
             </div>
         </form>
     </div>
-    <div class="row row-margin-bottom">
+    <div class="row row-margin-bottom hidden-xs">
         <div class="col-xs-12">
             <label class="checkbox-inline">
                 <input type="checkbox" ng-model="$ctrl.isFiltersEnabled"/> <span
@@ -111,7 +106,7 @@
                     <col width="15%"/>
                 </colgroup>
                 <tr ng-repeat="row in $data" ng-class="{'success': row.num == 3}">
-                    <td data-title="'序列'" filter="{id:'number'}" sortable="$ctrl.isSortable?'id':false" ng-if="true">
+                    <td class="hidden-xs" header-class="'hidden-xs'" data-title="'序列'" filter="{id:'number'}" sortable="$ctrl.isSortable?'id':false" ng-if="true">
                         <div class="dots" title="{{row.id}}" ng-bind="row.id"></div>
                     </td>
                     <td data-title="'名称'" filter="{name:'text'}" sortable="$ctrl.isSortable?'name':false" ng-if="true">
@@ -133,24 +128,6 @@
                     </td>
                 </tr>
             </table>
-        </div>
-    </div>
-</div>
-
-<div class="container visible-xs">
-    <div class="row">
-        <div class="col-xs-12 media" ng-repeat="row in $ctrl.data.data">
-            <div class="media-left">
-                <a ng-href="{{row.link}}" target="_blank">
-                    <img class="pre-img media-object" ng-src="{{'avatar.jpg'}}" alt="BRZ">
-                </a>
-            </div>
-            <div class="media-body">
-                <a ng-href="{{row.link}}" target="_blank">
-                    <b class="media-heading" ng-bind="row.name"></b>
-                </a>
-                <p ng-bind="row.descr"></p>
-            </div>
         </div>
     </div>
 </div>
