@@ -15,5 +15,5 @@ if __name__ == '__main__':
                 "subtitle": "公众号：博人撰",
                 "data": [row for row in reader]
             }
-            jf.write(json.dumps(data_dict))
+            jf.write(json.dumps(data_dict, indent=4))
     print('-- success --')
